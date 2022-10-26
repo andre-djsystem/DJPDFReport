@@ -1,0 +1,14 @@
+{
+	"hash": "d41d8cd98f00b204e9800998ecf8427e",
+	"updated": "2022-10-26T14:15:10.8069746-03:00",
+	"installedModules": {
+		"https://github.com/jepafi/free-jpdf-pascal": {
+			"name": "free-jpdf-pascal",
+			"version": "1.33.0",
+			"hash": "1b45266e83fa09ec64dd7831548c5154",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		}
+	}
+}
