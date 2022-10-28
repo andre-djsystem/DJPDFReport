@@ -197,6 +197,8 @@ type
     procedure TableRow(aData: array of String; aUseBorders: Boolean = True;
       aFill: Boolean = False);
 
+    function ConvertTAlignmentToTTexBoxAlignment(Alignment: TAlignment): TTexBoxAlignment;
+
     // Acesso aos métodos base e extensões da classe núcleo
     property CorePDF: TJPFpdfExtends read fPDFReport write SetCorePDF;
     property ProxyHost: String       read fProxyHost Write fProxyHost;
@@ -1001,6 +1003,18 @@ procedure TDJPDFReport.TableRow(aData: array of String; aUseBorders: Boolean;
   aFill: Boolean);
 begin
   fPDFReport.Row(aData, aUseBorders, aFill);
+end;
+
+function TDJPDFReport.ConvertTAlignmentToTTexBoxAlignment(Alignment: TAlignment
+  ): TTexBoxAlignment;
+begin
+  case Alignment of
+    taLeftJustify: Result := baLeft;
+    taRightJustify: Result := baRight;
+    taCenter: Result := baCenter;
+  else
+    Result := baJustify;
+  end;
 end;
 
 end.
